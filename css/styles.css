@@ -6,8 +6,14 @@
     --gris: #757575;
 }
 
+/*Globales*/
 html{
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body{
@@ -15,16 +21,115 @@ body{
     font-family:'Roboto Slab', serif;
 }
 
-
-.titulo{
-    text-align: center;
+/*Tipografia*/
+h1{
     font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
 }
 
 .titulo span{
     font-size: 2rem; 
 }
 
-.navegacion-principal{
-    
+/*Navegacion principal*/
+
+.nav-bg{
+    background-color: var(--secundario);
 }
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+
+.navegacion-principal{
+    display: flex;/*Los elementos de adentro se direcciona de izquierda a derecha*/
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    /*480px para celular, 768px para tablet, 1140px para computadora de escritorio*/
+    .navegacion-principal{
+        flex-direction: row;
+    }
+}
+
+.navegacion-principal a {
+    display: block;/*Toma todo el espacio*/
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/*Hero*/
+.hero{
+    background-image: url(../image/hero.jpg);
+    background-repeat: no-repeat; /*Que no se repita*/
+    background-size: cover; /*Que cubra todo el ancho*/
+    height: 450px;
+    position: relative;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7); /*Anterior*/
+    background-color: rgb(0 0 0 /70%);
+    width: 100%;
+    height: 100%;
+
+    display: flex; /*Alinea horizontalmente con justify content*/
+    justify-content: center;
+    flex-direction: column; /*Alinea verticalmente con align items*/
+    align-items: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex;
+    align-items:flex-end;
+}
+
